@@ -1,0 +1,88 @@
+.testimonials-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 80px 6vw;
+  background: var(--paper-dark);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.testimonial-card {
+  border: 1px solid var(--line);
+  padding: 32px;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-icon {
+  color: var(--seal);
+  opacity: 0.2;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.testimonial-content {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-author img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+}
+
+.author-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.author-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.author-company {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--seal);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

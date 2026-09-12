@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 90px 6vw 60px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.file-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--seal);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--seal);
+}
+
+.hero h1 {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: clamp(34px, 5.4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  max-width: 14ch;
+}
+
+.hero-sub {
+  max-width: 52ch;
+  margin-top: 22px;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 13px 26px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 0 var(--seal);
+}
+
+.btn-ghost {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 0 var(--gold);
+}
+
+.tabs-strip {
+  display: flex;
+  margin-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.tab {
+  flex: 1;
+  padding: 18px 16px 14px;
+  border-right: 1px solid var(--line);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab span {
+  display: block;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 6px;
+}
+
+.tab:hover {
+  background: var(--paper-dark);
+  color: var(--seal);
+}
+
+.tab:hover span {
+  color: var(--seal);
+}
+
+@media (max-width: 768px) {
+  .tabs-strip {
+    flex-direction: column;
+  }
+
+  .tab {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tab:last-child {
+    border-bottom: none;
+  }
+}
