@@ -4,8 +4,8 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="file-eyebrow">Case File — Open for Review</div>
-      <h1>Tax filings, done the way they're meant to be checked.</h1>
+      <div className="file-eyebrow">Transfer pricing & international tax</div>
+      <h1>Three filings. One careful <em>desk.</em></h1>
       <p className="hero-sub">
         Transfer pricing documentation, Form 3CEB filing, and non-resident
         certification under Form 41 and Form 10F — prepared with the same
@@ -20,19 +20,10 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="tabs-strip">
-        <a href="#service-tp" className="tab">
-          TP Study
-          <span>Transfer Pricing Documentation</span>
-        </a>
-        <a href="#service-3ceb" className="tab">
-          Form 3CEB
-          <span>Accountant's Report Filing</span>
-        </a>
-        <a href="#service-form41" className="tab">
-          Form 41 / 10F
-          <span>Non-Resident Filing</span>
-        </a>
+      <div className="hero-stats">
+        <div><strong>10–15 days</strong><span>TP study</span></div>
+        <div><strong>3–5 days</strong><span>Form 3CEB</span></div>
+        <div><strong>3–5 days</strong><span>Form 41 / 10F</span></div>
       </div>
     </section>
   );
