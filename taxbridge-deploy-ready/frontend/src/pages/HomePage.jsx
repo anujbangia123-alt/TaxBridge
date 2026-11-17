@@ -87,6 +87,8 @@ const HomePage = () => {
           <div className="section-num">02 / Case Files</div>
         </div>
 
+        <ServiceIndex />
+
         <ServiceCard
           id="service-tp"
           fileId="FILE / TPS"
@@ -134,7 +136,7 @@ const HomePage = () => {
       <section id="process" className="process-section">
         <div className="section-head">
           <h2>How a file moves</h2>
-          <div className="section-num\">03 / Process</div>
+          <div className="section-num">03 / Process</div>
         </div>
         <div className="process-list">
           <ProcessStep
@@ -167,6 +169,7 @@ const HomePage = () => {
         </div>
       </section>
 
+      <WhoWeServe />
       <Testimonials />
       <BlogSection />
       <VideoSection />
@@ -189,7 +192,7 @@ const HomePage = () => {
             <ul className="contact-list">
               <li>
                 <span>Email</span>
-                <span>anujbangia@123gmail.com</span>
+                <span>anujbangia123@gmail.com</span>
               </li>
               <li>
                 <span>Phone</span>
@@ -218,13 +221,77 @@ const HomePage = () => {
       </section>
 
       <footer className="footer">
-        <p>© 2025 TaxBridge Advisory. All filings handled with precision.</p>
+        <div className="footer-grid">
+          <div>
+            <div className="footer-brand">TaxBridge Advisory</div>
+            <p>Transfer pricing and international tax filings, handled remotely across India.</p>
+          </div>
+          <div>
+            <h5>Filings</h5>
+            <a href="#service-tp">TP Study</a>
+            <a href="#service-3ceb">Form 3CEB</a>
+            <a href="#service-form41">Form 41 / 10F</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="mailto:anujbangia123@gmail.com">anujbangia123@gmail.com</a>
+            <a href="tel:+917082547822">+91 70825 47822</a>
+          </div>
+        </div>
+        <p className="footer-disclaimer">
+          The content on this website is for general information only and is not an advertisement or
+          solicitation of professional services, nor tax advice. Terms of any engagement are set out
+          in the written engagement letter for that matter.
+        </p>
+        <p className="footer-copy">© {new Date().getFullYear()} TaxBridge Advisory. All rights reserved.</p>
       </footer>
 
       <Toaster />
     </div>
   );
 };
+
+const POINTS = {
+  'service-tp': ['Functional analysis (FAR)', 'Comparable selection & benchmarking', 'Arm\'s-length range & TP report'],
+  'service-3ceb': ['Transaction-wise disclosure', 'Method & arm\'s-length price per category', 'E-filing on the income tax portal'],
+  'service-form41': ['Correct form for the applicable regime', 'Tax Residency Certificate review', 'Preparation & e-filing']
+};
+
+const ServiceIndex = () => (
+  <div className="svc-index">
+    {[['I', 'Transfer Pricing Study', 'Documentation & benchmarking', '#service-tp'],
+      ['II', 'Form 3CEB Filing', 'Accountant\'s report, e-filed', '#service-3ceb'],
+      ['III', 'Form 41 & 10F', 'Treaty relief for non-residents', '#service-form41']].map(([n, t, d, h]) => (
+      <a key={n} href={h} className="svc-index-item">
+        <span className="svc-index-num">{n}</span>
+        <strong>{t}</strong>
+        <span>{d}</span>
+      </a>
+    ))}
+  </div>
+);
+
+const WhoWeServe = () => (
+  <section id="who" className="who-section">
+    <div className="section-head">
+      <h2>Who this is for</h2>
+      <div className="section-num">Clients</div>
+    </div>
+    <div className="who-grid">
+      {[['i.', 'Indian subsidiaries of foreign groups', 'Inbound related-party transactions.', ['Section 92E', 'Form 3CEB', 'TP study']],
+        ['ii.', 'Indian groups with overseas entities', 'Outbound transactions, reported cleanly.', ['Benchmarking', 'Form 3CEB']],
+        ['iii.', 'Non-residents earning from India', 'Treaty relief, with the paperwork to back it.', ['DTAA', 'Form 41 / 10F', 'TRC']]].map(([n, t, d, tags]) => (
+        <div key={n} className="who-card">
+          <span className="who-num">{n}</span>
+          <h3>{t}</h3>
+          <p>{d}</p>
+          <div className="who-tags">{tags.map((x) => <span key={x}>{x}</span>)}</div>
+        </div>
+      ))}
+    </div>
+    <a href="#contact" className="case-cta">Not sure where you fit? Send the details →</a>
+  </section>
+);
 
 // Service Card Component
 const ServiceCard = ({ id, fileId, title, description1, description2, fields }) => {
@@ -244,6 +311,8 @@ const ServiceCard = ({ id, fileId, title, description1, description2, fields }) 
           <div>
             <p>{description1}</p>
             <p>{description2}</p>
+            <ul className="case-points">{(POINTS[id] || []).map((x) => <li key={x}>{x}</li>)}</ul>
+            <a href="#contact" className="case-cta">Discuss this filing →</a>
           </div>
           <div>
             {fields.map((field, index) => (
